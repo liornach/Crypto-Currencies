@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  
+
+  
+    <title>myCoolestCurrency</title>
+    
+    
+  </head>
+  <body>
+    <!-- this is test modal -->
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="modalButton" style="display:none">
+  
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeButton">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelButton">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveChanges" >Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- this is test modal -->
+      <div class="header">
+         <h3 id="
+         appName"><small class="text-muted">MyCoolestCurrency</small></h3>
+
+      </div>
+      <div class="parallax"></div>
+      <hr>
+
+ 
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="homeTab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="reportsTab" data-toggle="tab" href="#reports" role="tab" aria-controls="profile" aria-selected="false">Real Time Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="aboutTag" data-toggle="tab" href="#about" role="tab" aria-controls="contact" aria-selected="false">About</a>
+          </li>
+     
+
+<div id="searchBtn">
+            <nav class="navbar navbar-light bg-light">
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" id="mySearch">
+                <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" type="button">Search (type nothing to reset</button>
+              </form>
+            </nav>
+</div>
+
+<div id="showReport"><button class="btn btn-secondary">Show Report</button></div>
+         
+        </ul>
+
+    
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div id="homeHeader"><div class="myLoading" id="loadingHome" style="display:none"><img src="Spinner-1s-200px.gif"></div></div>
+    <div class="container" id="cardsGoHere"></div>
+  </div>
+  <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="profile-tab"><div class="myLoading" id="loadingReport" style="display:none"><img src="Spinner-1s-200px.gif"></div>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+  </div>
+  <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="contact-tab"><br><br><br>
+  <p id="description">Lior Nachmias started his business in his early 20' , and did a shit lots of money. Of course this one is a lie , but it's still good enough to get into this project. And now you'll see a photo of Lior - Try not to puke.</p>
+  <div id="liorImage">
+    <img src="liorImage.jpeg" id="theImage">
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+
+    <script  src="jquery-3.6.0.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script  src="main.js" defer>
+    </script>
+    <script type="text/javascript" src="canvasjs.min.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        $('#homeTab').on('click' , clearMyInterval);
+                $('#aboutTag').on('click' , clearMyInterval);
+        $('#reportsTab').on('click' , function(e){
+
+          if(reportList.length > 0){
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+            const symbolArray = [];
+            let symbolToAddToLink = '';
+            
+         $(reportList).each(function(i){
+          const coinSymbol = this.symbol.toString();
+          symbolArray[i] = coinSymbol.toUpperCase();
+          symbolToAddToLink += coinSymbol + ',';
+         })
+           console.log(symbolToAddToLink);
+  
+  
+                  
+                  var chart = new CanvasJS.Chart
+                  ("chartContainer",
+      {
+
+        width: 1200,
+
+        axisY:{
+title: 'USD'
+        }
+        ,
+        
+        axisX:{
+          title: "seconds",
+     minimum: 0,
+   },
+        title:{
+        text: "Multi-Series Line Chart"  
+        },
+        data: [
+           
+  
+          {        
+          type: "line",
+          showInLegend: true,
+          legendText: `${symbolArray[0]}`,
+          dataPoints: [
+          ]
+        }
+  ,
+        {        
+          type: "line",
+          showInLegend: true,
+          legendText: `${symbolArray[1]}`,
+          dataPoints: [
+          ]
+        }
+  ,
+        {        
+          type: "line",
+          showInLegend: true,
+          legendText: `${symbolArray[2]}`,
+          dataPoints: [
+
+          ]
+        }
+  ,
+        {        
+          type: "line",
+          showInLegend: true,
+          legendText: `${symbolArray[3]}`,
+          dataPoints: [
+          ]
+        }
+  ,
+        {        
+          type: "line",
+          showInLegend: true,
+          legendText: `${symbolArray[4]}`,
+          dataPoints: [
+          ]
+        }
+        ]
+      });
+  
+      chart.options.title.text = "";
+      chart.render();
+  
+      let xValue = 0;
+      let yValue;
+
+      
+      $.ajax({
+            url: `https://min-api.cryptocompare.com/data/pricemulti?fsyms=${symbolToAddToLink}&tsyms=USD` ,
+          
+            success : coinValue => {
+              
+              
+              $(symbolArray).each(function(index){
+
+               
+                yValue =coinValue[symbolArray[index]].USD;
+                
+               
+                let length = chart.options.data[index].dataPoints.length;
+                chart.options.title.text = "Live Reports";
+                chart.options.data[index].dataPoints.push({ x:xValue,y: yValue });
+                chart.render();
+                
+                
+                
+                
+
+
+
+              })
+              xValue += 2;
+          
+            }
+          ,
+            error : err=>{
+              alert('could not get data')
+            }
+          
+          })
+  
+  
+
+      //this will happen every 2 seconds
+     window.myGraph =  setInterval(function(){
+  console.log('working...')
+
+//       const loadingImage = $('#loadingReport');
+
+// if(xValue==0){
+//   loadingImage.show();
+// }
+// else{
+//   loadingImage.hide();
+// }
+  
+        
+          $.ajax({
+            url: `https://min-api.cryptocompare.com/data/pricemulti?fsyms=${symbolToAddToLink}&tsyms=USD` ,
+          
+            success : coinValue => {
+              
+              
+              $(symbolArray).each(function(index){
+
+                
+                yValue =coinValue[symbolArray[index]].USD;
+                
+               
+                let length = chart.options.data[index].dataPoints.length;
+                chart.options.title.text = "Live Reports";
+                chart.options.data[index].dataPoints.push({ x:xValue,y: yValue });
+                chart.render();
+                
+                
+                
+                
+
+
+
+              })
+              xValue += 2;
+          
+            }
+          ,
+            error : err=>{
+              alert('could not get data')
+            }
+          
+          })
+  
+  
+  
+      }
+        
+      
+      
+      
+      
+      
+      ,2000)
+
+
+
+
+          }  
+
+          else{
+            e.stopPropagation();
+            alert('You need to pick at least 1 coin to show in report');
+
+          }
+
+
+
+             
+          
+          
+          
+          
+          // ,2000)
+
+
+
+    
+
+
+
+  })}
+
+  function clearMyInterval(){
+            
+            clearInterval(myGraph);
+        }
+  </script>
+
+    <link rel="stylesheet" href="style.css">
+  </body>
+</html>
